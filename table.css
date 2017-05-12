@@ -1,0 +1,37 @@
+<style>
+.GenericTable
+	{
+		font-size:12px;
+		color:white;
+		font-family: Arial, Helvetica, sans-serif;
+		border-width: 1px;
+		border-color: #0070d2;/* This is dark*/
+		border-collapse: collapse;
+	}
+
+.GenericTable th
+	{
+		font-size:12px;
+		color:white;
+		background-color:#0070d2;/* This is dark*/
+		border-width: 1px;
+		padding: 4px;
+		border-style: solid;
+		border-color: #c4e3f5;/* This is light*/
+		text-align:left;
+	}
+
+.GenericTable tr
+	{
+		color:black;
+		background-color:#c4e3f5;/* This is light*/
+	}
+
+.GenericTable td
+	{
+		font-size:10px;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #0070d2;/* This is dark*/
+	}
+</style>
