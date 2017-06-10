@@ -13,15 +13,15 @@ cci task run run_tests --org scratch
 echo "Finished tests"
 
 sfdx force:org:list
-sfdx force:org:list | tail -1 | sed 's/\(scratchorg[0-9]*@npsp-jenkinsworkspace.com\).*/\1/' > scratch_user.txt
-SCRATCHUSER=$(cat scratch_user.txt  | sed -n 1p | sed 's/\s*\(.*\)$/\1/')
+sfdx force:org:list | grep scratchorg | tail -1 | sed 's/\(scratchorg[0-9]*@npsp-jenkinsworkspace.com\).*/\1/' > scratch_user.txt
+SCRATCHUSER=$(cat scratch_user.txt | sed -n 1p | sed 's/\s*\(.*\)$/\1/')
 echo $SCRATCHUSER
 sfdx force:config:set defaultusername=$SCRATCHUSER
 
 echo "Get Org URL"
 sfdx force:org:open -r > scratch_session.txt 
 sleep 10s
-SCRATCHSESS=$(cat scratch_session.txt  | sed -n 1p | sed 's/.*sid=\(.*\)$/\1/')
+SCRATCHSESS=$(cat scratch_session.txt | sed -n 1p | sed 's/.*sid=\(.*\)$/\1/')
 echo $SCRATCHSESS
 
 echo "Get Apex Test Results"
